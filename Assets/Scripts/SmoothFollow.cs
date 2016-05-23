@@ -7,6 +7,8 @@ using System.Collections;
 public class SmoothFollow : MonoBehaviour
 {
 
+    private GameManager GM;
+
     // The target we are following
     public Transform target;
     // The distance in the x-z plane to the target
@@ -16,18 +18,59 @@ public class SmoothFollow : MonoBehaviour
     // How much we 
     public float heightDamping = 2.0f;
     public float rotationDamping = 3.0f;
+    public float cameraVertMod;
+    private Quaternion originalRot;
+
+    public bool moveCam;
 
     // Place the script in the Camera-Control group in the component menu
     [AddComponentMenu("Camera-Control/Smooth Follow")]
+
+    void Awake()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    void Start()
+    {
+        originalRot = target.transform.localRotation;
+    }
 
     void LateUpdate()
     {
         // Early out if we don't have a target
         if (!target) return;
+        if (GM.gameTimer <= 0) return;
 
-        // Calculate the current rotation angles
+        //Move cam around horizontally
+        if (Input.GetAxis("HorizontalRight") != 0)
+        {
+            target.transform.Rotate(0, Input.GetAxis("HorizontalRight") * Time.deltaTime * 100, 0);
+            //cameraHorMod += (Input.GetAxis("HorizontalRight") * Time.deltaTime) * 1000;
+        } else if (Input.GetAxis("Vertical") != 0)
+        {
+            target.transform.localRotation = Quaternion.Lerp(target.transform.localRotation, originalRot, Time.deltaTime * 3);
+            //cameraHorMod = Mathf.Lerp(cameraHorMod, 0, Time.deltaTime / 4);
+        }
+
+        //Move cam around vertically
+        if (Input.GetAxis("VerticalRight") != 0)
+        {
+            cameraVertMod += (Input.GetAxis("VerticalRight") * Time.deltaTime) * 25;
+        }
+        else if (Input.GetAxis("Vertical") != 0)
+        {
+            cameraVertMod = Mathf.Lerp(cameraVertMod, 0, Time.deltaTime / 2);
+        }
+
+        //Clamp hor and vert
+        //cameraHorMod = Mathf.Clamp(cameraHorMod, -90, 90);
+        cameraVertMod = Mathf.Clamp(cameraVertMod, -1, 2);
+
+        // Calculate the current rotation angles and reset modifiers
         float wantedRotationAngle = target.eulerAngles.y;
-        float wantedHeight = target.position.y + height;
+        float wantedHeight = target.position.y + height + cameraVertMod;
+        cameraVertMod = 0;
 
         float currentRotationAngle = transform.eulerAngles.y;
         float currentHeight = transform.position.y;

@@ -3,44 +3,68 @@ using System.Collections;
 
 public class FoxController : MonoBehaviour {
 
+    private GameManager GM;
+
+    //Components
+    private Rigidbody foxRB;
+    private Animation foxAnim;
+    private Vector3 forwardForce;
+    private Renderer myRend;
+    public AudioSource footstepsSFX;
+    public AudioSource footstepsSlowSFX;
+
+    //Designer Variables
     public float maxVelocity;
     public float acceleration;
     public float turnSpeed;
     public float jumpPower;
-    private Rigidbody foxRB;
-    private Animation foxAnim;
-    private Vector3 forwardForce;
+
     private float currentMaxVel;
     private float currentTurnSpeed;
     private bool grounded;
-    private float recentlyJumped = 0;
+    private float recentlyJumped;
 
-	void Start () {
+    void Awake()
+    {
+        myRend = gameObject.GetComponentInChildren<Renderer>();
         foxRB = gameObject.GetComponent<Rigidbody>();
         foxAnim = gameObject.GetComponent<Animation>();
-	}
-	
-	void Update () {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    void Start () {
+        //Start first fox full size
+        transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    void Update () {
         Animate();
         CheckGrounded();
-        Jump();
+        Controls();
 
+        //Jump Timer (for sfx, anims, etc)
         recentlyJumped -= Time.deltaTime;
+
+        //Delete me once Im all used up
+       if (!myRend.isVisible && GM.gameTimer > 5)
+        {
+            Destroy(this);
+        }
 	}
 
     void FixedUpdate()
     {
-        Controls();
+        Move();
     }
 
-    void Jump()
+    void Controls()
     {
         //Jump
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && grounded && recentlyJumped < 0)
         {
-            foxAnim.CrossFade("jump", 0.2f);
+            foxAnim.CrossFade("fox_jump", 0.2f);
             foxRB.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-            recentlyJumped = foxAnim["jump"].length * 0.75f;
+            recentlyJumped = foxAnim["fox_jump"].length * 0.75f;
         }
 
         //Turn fox, reversed if going backwards - moved to here for non fixed update
@@ -54,7 +78,7 @@ public class FoxController : MonoBehaviour {
         }
     }
 
-    void Controls()
+    void Move()
     {
         //Set max vol for reverse
         if (Input.GetAxis("Vertical") <= 0)
@@ -72,6 +96,29 @@ public class FoxController : MonoBehaviour {
         {
             foxRB.AddForce(transform.forward * Input.GetAxis("Vertical") * acceleration * Time.deltaTime);
         }
+
+        //Play SFX
+        if (Input.GetAxis("Vertical") != 0 && foxRB.velocity.sqrMagnitude > 10f && grounded)
+        {
+            if (!footstepsSFX.isPlaying)
+            {
+                footstepsSFX.Play();
+            }
+        } else
+        {
+            footstepsSFX.Stop();
+        }
+
+        if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0) && foxRB.velocity.sqrMagnitude < 10f && grounded)
+        {
+            if (!footstepsSlowSFX.isPlaying)
+            {
+                footstepsSlowSFX.Play();
+            }
+        } else
+        {
+            footstepsSlowSFX.Stop();
+        }
     }
 
     void Animate()
@@ -81,42 +128,45 @@ public class FoxController : MonoBehaviour {
             //Walking anims
             if (Input.GetAxis("Vertical") > 0 || foxRB.velocity.magnitude > 0)
             {
-                if (foxRB.velocity.sqrMagnitude > 6f && !foxAnim.IsPlaying("run") && Input.GetAxis("Vertical") > 0)
+                if (foxRB.velocity.sqrMagnitude > 10f && !foxAnim.IsPlaying("fox_run") && Input.GetAxis("Vertical") > 0)
                 {
-                    foxAnim.CrossFade("run");
+                    foxAnim.CrossFade("fox_run");
                 }
-                else if (foxRB.velocity.sqrMagnitude < 6f && !foxAnim.IsPlaying("walk"))
+                else if (foxRB.velocity.sqrMagnitude < 10f && !foxAnim.IsPlaying("fox_walk"))
                 {
-                    foxAnim.CrossFade("walk", 1f);
+                    foxAnim.CrossFade("fox_walk");
                 }
             }
-            else if (foxRB.velocity.sqrMagnitude == 0 && !foxAnim.IsPlaying("idle"))
+            else if (foxRB.velocity.sqrMagnitude == 0 && !foxAnim.IsPlaying("fox_idle"))
             {
-                foxAnim.CrossFade("idle", 0.1f);
+                foxAnim.CrossFade("fox_idle");
             }
 
+
+            //Removed due to new animation
             //Reverse walking backwards anim, only if goin real slow
-            if (foxRB.velocity.sqrMagnitude > -1 && foxRB.velocity.magnitude < 1)
+            /*if (foxRB.velocity.sqrMagnitude > -2 && foxRB.velocity.magnitude < 2)
             {
                 if (Input.GetAxis("Vertical") < 0)
                 {
-                    if (foxAnim["walk"].speed != -1)
+                    if (foxAnim["fox_walk"].speed != -1)
                     {
-                        foxAnim["walk"].time = 0;
-                        foxAnim["walk"].speed = -1;
+                        foxAnim["fox_walk"].time = 0;
+                        foxAnim["fox_walk"].speed = -1;
                     }
                 }
                 else if (Input.GetAxis("Vertical") > 0 || foxRB.velocity.sqrMagnitude == 0)
                 {
-                    foxAnim["walk"].speed = 1;
+                    foxAnim["fox_walk"].speed = 1;
                 }
-            }
+            }*/
         }
     }
 
     void CheckGrounded()
     {
-        Ray groundRay = new Ray(transform.position, -transform.up);
+        Ray groundRay = new Ray((transform.position + transform.up * 0.2f), -transform.up);
         grounded = Physics.Raycast(groundRay, 0.25f);
+        Debug.DrawRay(transform.position, -transform.up);
     }
 }

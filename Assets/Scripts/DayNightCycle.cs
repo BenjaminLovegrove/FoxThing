@@ -3,10 +3,14 @@ using System.Collections;
 
 public class DayNightCycle : MonoBehaviour {
 
+    private GameManager GM;
+
     //Components
     private Renderer[] renderContainer;
     private Material[] skyboxMats;
     public Light sunLight;
+    public Light moonLight;
+    private float maxMoonlight;
 
     //Sun Rotation
     public float timeOfDay;
@@ -14,9 +18,16 @@ public class DayNightCycle : MonoBehaviour {
     public float nightDuration;
     private float nightTimer;
 
-	void Start () {
+    void Awake()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    void Start () {
         //Get the sun + rotations
         sunLight = GameObject.Find("Sun").GetComponent<Light>();
+        moonLight = GameObject.Find("Moon").GetComponent<Light>();
+        maxMoonlight = moonLight.intensity;
 
         //Find all fading skybox materials
         renderContainer = gameObject.GetComponentsInChildren<Renderer>();
@@ -36,12 +47,16 @@ public class DayNightCycle : MonoBehaviour {
     }
 
     void CycleLighting () {
-        if (!fastForward)
+        if (GM.gameTimer > 0)
         {
-            timeOfDay += Time.deltaTime / 24;
-        } else
-        {
-            timeOfDay += Time.deltaTime;
+            if (!fastForward)
+            {
+                timeOfDay += Time.deltaTime / 150;
+            }
+            else
+            {
+                timeOfDay += Time.deltaTime;
+            }
         }
 
         //Move Sun and change brightness
@@ -49,9 +64,11 @@ public class DayNightCycle : MonoBehaviour {
         if (timeOfDay < 0.5f)
         {
             sunLight.intensity = Mathf.Lerp(0, 1, timeOfDay * 2);
+            moonLight.intensity = Mathf.Lerp(maxMoonlight, 0, timeOfDay * 2);
         }
         else {
             sunLight.intensity = Mathf.Lerp(1, 0, (timeOfDay * 2) - 1);
+            moonLight.intensity = Mathf.Lerp(0, maxMoonlight, (timeOfDay * 2) - 1);
         }
 
         //Fade night sky

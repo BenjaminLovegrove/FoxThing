@@ -1,0 +1,854 @@
+fileFormatVersion: 2
+guid: 6d7571389733be248a565da1d26b486f
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Fox
+    100004: fox_Head_bone
+    100006: fox_Head_ctrl
+    100008: fox_Jaw-nub_bone
+    100010: fox_Jaw1_bone
+    100012: fox_Jaw1_ctrl
+    100014: fox_Jaw2_bone
+    100016: fox_Jaw2_ctrl
+    100018: fox_l_Ankle_bone
+    100020: fox_l_Ankle_IKGoal
+    100022: fox_l_AnkleF_bone
+    100024: fox_l_AnkleHind_IKGoal
+    100026: fox_l_ball_IKGoal
+    100028: fox_l_ballHind_IKGoal
+    100030: fox_l_Carpal_bone
+    100032: fox_l_Carpal_IKGoal
+    100034: fox_l_Femur_bone
+    100036: fox_l_Foot_ctrl
+    100038: fox_l_FootHind_ctrl
+    100040: fox_l_Heel_hlp
+    100042: fox_l_HeelHind_hlp
+    100044: fox_l_HeelPeel_hlp
+    100046: fox_l_HeelPeelHind_hlp
+    100048: fox_l_Humerus_bone
+    100050: fox_l_Scapula_bone
+    100052: fox_l_Tarsal_bone
+    100054: fox_l_Tarsal_IKGoal
+    100056: fox_l_Tibia_bone
+    100058: fox_l_Toe-nub_bone
+    100060: fox_l_Toe_bone
+    100062: fox_l_Toe_IKGoal
+    100064: fox_l_ToeF-nub_bone
+    100066: fox_l_ToeF_bone
+    100068: fox_l_ToeHind_IKGoal
+    100070: fox_l_ToeLift_hlp
+    100072: fox_l_ToeLiftHind_hlp
+    100074: fox_l_ToeTap_hlp
+    100076: fox_l_ToeTapHind_hlp
+    100078: fox_l_Ulna_bone
+    100080: fox_Neck1_bone
+    100082: fox_Neck1_ctrl
+    100084: fox_Neck2_bone
+    100086: fox_Neck2_ctrl
+    100088: fox_Pelvis1_bone
+    100090: fox_Pelvis1_ctrl
+    100092: fox_Pelvis2_bone
+    100094: fox_Pelvis2_ctrl
+    100096: fox_r_Ankle_bone
+    100098: fox_r_Ankle_bone 1
+    100100: fox_r_AnkleF_bone
+    100102: fox_r_AnkleHind_IKGoal
+    100104: fox_r_ball_IKGoal
+    100106: fox_r_ballHind_IKGoal
+    100108: fox_r_Carpal_bone
+    100110: fox_r_Carpal_IKGoal
+    100112: fox_r_Femur_bone
+    100114: fox_r_Foot_ctrl
+    100116: fox_r_FootHind_ctrl
+    100118: fox_r_Heel_hlp
+    100120: fox_r_HeelHind_hlp
+    100122: fox_r_HeelPeel_hlp
+    100124: fox_r_HeelPeelHind_hlp
+    100126: fox_r_Humerus_bone
+    100128: fox_r_Scapula_bone
+    100130: fox_r_Tarsal_bone
+    100132: fox_r_TarsalHind_IKGoal
+    100134: fox_r_Tibia_bone
+    100136: fox_r_Toe-nub_bone
+    100138: fox_r_Toe_bone
+    100140: fox_r_Toe_IKGoal
+    100142: fox_r_ToeF-nub_bone
+    100144: fox_r_ToeF_bone
+    100146: fox_r_ToeHind_IKGoal
+    100148: fox_r_ToeLift_hlp
+    100150: fox_r_ToeLiftHind_hlp
+    100152: fox_r_ToeTap_hlp
+    100154: fox_r_ToeTapHind_hlp
+    100156: fox_r_Ulna_bone
+    100158: fox_Snout-nub_bone
+    100160: fox_Snout_bone
+    100162: fox_Snout_ctrl
+    100164: fox_Spine1_bone
+    100166: fox_Spine1_ctrl
+    100168: fox_Spine2_bone
+    100170: fox_Spine2_ctrl
+    100172: fox_Spine3_bone
+    100174: fox_Spine3_ctrl
+    100176: fox_Spine4_bone
+    100178: fox_Spine4_ctrl
+    100180: fox_Spine5_bone
+    100182: fox_Spine5_ctrl
+    100184: fox_Tail-nub_bone
+    100186: fox_Tail1_bone
+    100188: fox_Tail1_ctrl
+    100190: fox_Tail2_bone
+    100192: fox_Tail2_ctrl
+    100194: fox_Tail3_bone
+    100196: fox_Tail3_ctrl
+    100198: fox_Tail4_bone
+    100200: fox_Tail4_ctrl
+    100202: fox_Tail5_bone
+    100204: fox_Tail5_ctrl
+    100206: fox_Tail6_bone
+    100208: fox_Tail6_ctrl
+    100210: fox_Tail7_bone
+    100212: fox_Tail7_ctrl
+    100214: GeneralController001
+    400000: //RootNode
+    400002: Fox
+    400004: fox_Head_bone
+    400006: fox_Head_ctrl
+    400008: fox_Jaw-nub_bone
+    400010: fox_Jaw1_bone
+    400012: fox_Jaw1_ctrl
+    400014: fox_Jaw2_bone
+    400016: fox_Jaw2_ctrl
+    400018: fox_l_Ankle_bone
+    400020: fox_l_Ankle_IKGoal
+    400022: fox_l_AnkleF_bone
+    400024: fox_l_AnkleHind_IKGoal
+    400026: fox_l_ball_IKGoal
+    400028: fox_l_ballHind_IKGoal
+    400030: fox_l_Carpal_bone
+    400032: fox_l_Carpal_IKGoal
+    400034: fox_l_Femur_bone
+    400036: fox_l_Foot_ctrl
+    400038: fox_l_FootHind_ctrl
+    400040: fox_l_Heel_hlp
+    400042: fox_l_HeelHind_hlp
+    400044: fox_l_HeelPeel_hlp
+    400046: fox_l_HeelPeelHind_hlp
+    400048: fox_l_Humerus_bone
+    400050: fox_l_Scapula_bone
+    400052: fox_l_Tarsal_bone
+    400054: fox_l_Tarsal_IKGoal
+    400056: fox_l_Tibia_bone
+    400058: fox_l_Toe-nub_bone
+    400060: fox_l_Toe_bone
+    400062: fox_l_Toe_IKGoal
+    400064: fox_l_ToeF-nub_bone
+    400066: fox_l_ToeF_bone
+    400068: fox_l_ToeHind_IKGoal
+    400070: fox_l_ToeLift_hlp
+    400072: fox_l_ToeLiftHind_hlp
+    400074: fox_l_ToeTap_hlp
+    400076: fox_l_ToeTapHind_hlp
+    400078: fox_l_Ulna_bone
+    400080: fox_Neck1_bone
+    400082: fox_Neck1_ctrl
+    400084: fox_Neck2_bone
+    400086: fox_Neck2_ctrl
+    400088: fox_Pelvis1_bone
+    400090: fox_Pelvis1_ctrl
+    400092: fox_Pelvis2_bone
+    400094: fox_Pelvis2_ctrl
+    400096: fox_r_Ankle_bone
+    400098: fox_r_Ankle_bone 1
+    400100: fox_r_AnkleF_bone
+    400102: fox_r_AnkleHind_IKGoal
+    400104: fox_r_ball_IKGoal
+    400106: fox_r_ballHind_IKGoal
+    400108: fox_r_Carpal_bone
+    400110: fox_r_Carpal_IKGoal
+    400112: fox_r_Femur_bone
+    400114: fox_r_Foot_ctrl
+    400116: fox_r_FootHind_ctrl
+    400118: fox_r_Heel_hlp
+    400120: fox_r_HeelHind_hlp
+    400122: fox_r_HeelPeel_hlp
+    400124: fox_r_HeelPeelHind_hlp
+    400126: fox_r_Humerus_bone
+    400128: fox_r_Scapula_bone
+    400130: fox_r_Tarsal_bone
+    400132: fox_r_TarsalHind_IKGoal
+    400134: fox_r_Tibia_bone
+    400136: fox_r_Toe-nub_bone
+    400138: fox_r_Toe_bone
+    400140: fox_r_Toe_IKGoal
+    400142: fox_r_ToeF-nub_bone
+    400144: fox_r_ToeF_bone
+    400146: fox_r_ToeHind_IKGoal
+    400148: fox_r_ToeLift_hlp
+    400150: fox_r_ToeLiftHind_hlp
+    400152: fox_r_ToeTap_hlp
+    400154: fox_r_ToeTapHind_hlp
+    400156: fox_r_Ulna_bone
+    400158: fox_Snout-nub_bone
+    400160: fox_Snout_bone
+    400162: fox_Snout_ctrl
+    400164: fox_Spine1_bone
+    400166: fox_Spine1_ctrl
+    400168: fox_Spine2_bone
+    400170: fox_Spine2_ctrl
+    400172: fox_Spine3_bone
+    400174: fox_Spine3_ctrl
+    400176: fox_Spine4_bone
+    400178: fox_Spine4_ctrl
+    400180: fox_Spine5_bone
+    400182: fox_Spine5_ctrl
+    400184: fox_Tail-nub_bone
+    400186: fox_Tail1_bone
+    400188: fox_Tail1_ctrl
+    400190: fox_Tail2_bone
+    400192: fox_Tail2_ctrl
+    400194: fox_Tail3_bone
+    400196: fox_Tail3_ctrl
+    400198: fox_Tail4_bone
+    400200: fox_Tail4_ctrl
+    400202: fox_Tail5_bone
+    400204: fox_Tail5_ctrl
+    400206: fox_Tail6_bone
+    400208: fox_Tail6_ctrl
+    400210: fox_Tail7_bone
+    400212: fox_Tail7_ctrl
+    400214: GeneralController001
+    4300000: Fox
+    7400000: fox_walk
+    7400002: fox_run
+    7400004: fox_attack1
+    7400006: fox_attack2
+    7400008: fox_bite
+    7400010: fox_growl
+    7400012: fox_idle
+    7400014: fox_jump
+    7400016: fox_eat
+    7400018: fox_hit
+    7400020: fox_die
+    7400022: fox_sneak
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Fox
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: fox_walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fox
+        weight: 1
+      - path: fox_Pelvis1_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_l_Femur_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_l_Femur_bone/fox_l_Tibia_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_l_Femur_bone/fox_l_Tibia_bone/fox_l_Tarsal_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_l_Femur_bone/fox_l_Tibia_bone/fox_l_Tarsal_bone/fox_l_Ankle_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_l_Femur_bone/fox_l_Tibia_bone/fox_l_Tarsal_bone/fox_l_Ankle_bone/fox_l_Toe_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_l_Femur_bone/fox_l_Tibia_bone/fox_l_Tarsal_bone/fox_l_Ankle_bone/fox_l_Toe_bone/fox_l_Toe-nub_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone/fox_Tail2_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone/fox_Tail2_bone/fox_Tail3_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone/fox_Tail2_bone/fox_Tail3_bone/fox_Tail4_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone/fox_Tail2_bone/fox_Tail3_bone/fox_Tail4_bone/fox_Tail5_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone/fox_Tail2_bone/fox_Tail3_bone/fox_Tail4_bone/fox_Tail5_bone/fox_Tail6_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone/fox_Tail2_bone/fox_Tail3_bone/fox_Tail4_bone/fox_Tail5_bone/fox_Tail6_bone/fox_Tail7_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Pelvis2_bone/fox_Tail1_bone/fox_Tail2_bone/fox_Tail3_bone/fox_Tail4_bone/fox_Tail5_bone/fox_Tail6_bone/fox_Tail7_bone/fox_Tail-nub_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_r_Femur_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_r_Femur_bone/fox_r_Tibia_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_r_Femur_bone/fox_r_Tibia_bone/fox_r_Tarsal_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_r_Femur_bone/fox_r_Tibia_bone/fox_r_Tarsal_bone/fox_r_Ankle_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_r_Femur_bone/fox_r_Tibia_bone/fox_r_Tarsal_bone/fox_r_Ankle_bone/fox_r_Toe_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_r_Femur_bone/fox_r_Tibia_bone/fox_r_Tarsal_bone/fox_r_Ankle_bone/fox_r_Toe_bone/fox_r_Toe-nub_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_l_Scapula_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_l_Scapula_bone/fox_l_Humerus_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_l_Scapula_bone/fox_l_Humerus_bone/fox_l_Ulna_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_l_Scapula_bone/fox_l_Humerus_bone/fox_l_Ulna_bone/fox_l_Carpal_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_l_Scapula_bone/fox_l_Humerus_bone/fox_l_Ulna_bone/fox_l_Carpal_bone/fox_l_AnkleF_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_l_Scapula_bone/fox_l_Humerus_bone/fox_l_Ulna_bone/fox_l_Carpal_bone/fox_l_AnkleF_bone/fox_l_ToeF_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_l_Scapula_bone/fox_l_Humerus_bone/fox_l_Ulna_bone/fox_l_Carpal_bone/fox_l_AnkleF_bone/fox_l_ToeF_bone/fox_l_ToeF-nub_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone/fox_Neck2_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone/fox_Neck2_bone/fox_Head_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone/fox_Neck2_bone/fox_Head_bone/fox_Jaw1_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone/fox_Neck2_bone/fox_Head_bone/fox_Jaw1_bone/fox_Jaw2_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone/fox_Neck2_bone/fox_Head_bone/fox_Jaw1_bone/fox_Jaw2_bone/fox_Jaw-nub_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone/fox_Neck2_bone/fox_Head_bone/fox_Snout_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_Neck1_bone/fox_Neck2_bone/fox_Head_bone/fox_Snout_bone/fox_Snout-nub_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_r_Scapula_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_r_Scapula_bone/fox_r_Humerus_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_r_Scapula_bone/fox_r_Humerus_bone/fox_r_Ulna_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_r_Scapula_bone/fox_r_Humerus_bone/fox_r_Ulna_bone/fox_r_Carpal_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_r_Scapula_bone/fox_r_Humerus_bone/fox_r_Ulna_bone/fox_r_Carpal_bone/fox_r_AnkleF_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_r_Scapula_bone/fox_r_Humerus_bone/fox_r_Ulna_bone/fox_r_Carpal_bone/fox_r_AnkleF_bone/fox_r_ToeF_bone
+        weight: 1
+      - path: fox_Pelvis1_bone/fox_Spine1_bone/fox_Spine2_bone/fox_Spine3_bone/fox_Spine4_bone/fox_Spine5_bone/fox_r_Scapula_bone/fox_r_Humerus_bone/fox_r_Ulna_bone/fox_r_Carpal_bone/fox_r_AnkleF_bone/fox_r_ToeF_bone/fox_r_ToeF-nub_bone
+        weight: 1
+      - path: GeneralController001
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp/fox_l_ToeLift_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp/fox_l_ToeLift_hlp/fox_l_HeelPeel_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp/fox_l_ToeLift_hlp/fox_l_HeelPeel_hlp/fox_l_Ankle_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp/fox_l_ToeLift_hlp/fox_l_HeelPeel_hlp/fox_l_ball_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp/fox_l_ToeLift_hlp/fox_l_HeelPeel_hlp/fox_l_Carpal_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp/fox_l_ToeLift_hlp/fox_l_ToeTap_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_Foot_ctrl/fox_l_Heel_hlp/fox_l_ToeLift_hlp/fox_l_ToeTap_hlp/fox_l_Toe_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp/fox_l_ToeLiftHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp/fox_l_ToeLiftHind_hlp/fox_l_HeelPeelHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp/fox_l_ToeLiftHind_hlp/fox_l_HeelPeelHind_hlp/fox_l_AnkleHind_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp/fox_l_ToeLiftHind_hlp/fox_l_HeelPeelHind_hlp/fox_l_ballHind_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp/fox_l_ToeLiftHind_hlp/fox_l_HeelPeelHind_hlp/fox_l_Tarsal_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp/fox_l_ToeLiftHind_hlp/fox_l_ToeTapHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_l_FootHind_ctrl/fox_l_HeelHind_hlp/fox_l_ToeLiftHind_hlp/fox_l_ToeTapHind_hlp/fox_l_ToeHind_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl/fox_Tail1_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl/fox_Tail1_ctrl/fox_Tail2_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl/fox_Tail1_ctrl/fox_Tail2_ctrl/fox_Tail3_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl/fox_Tail1_ctrl/fox_Tail2_ctrl/fox_Tail3_ctrl/fox_Tail4_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl/fox_Tail1_ctrl/fox_Tail2_ctrl/fox_Tail3_ctrl/fox_Tail4_ctrl/fox_Tail5_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl/fox_Tail1_ctrl/fox_Tail2_ctrl/fox_Tail3_ctrl/fox_Tail4_ctrl/fox_Tail5_ctrl/fox_Tail6_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Pelvis2_ctrl/fox_Tail1_ctrl/fox_Tail2_ctrl/fox_Tail3_ctrl/fox_Tail4_ctrl/fox_Tail5_ctrl/fox_Tail6_ctrl/fox_Tail7_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl/fox_Spine5_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl/fox_Spine5_ctrl/fox_Neck1_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl/fox_Spine5_ctrl/fox_Neck1_ctrl/fox_Neck2_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl/fox_Spine5_ctrl/fox_Neck1_ctrl/fox_Neck2_ctrl/fox_Head_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl/fox_Spine5_ctrl/fox_Neck1_ctrl/fox_Neck2_ctrl/fox_Head_ctrl/fox_Jaw1_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl/fox_Spine5_ctrl/fox_Neck1_ctrl/fox_Neck2_ctrl/fox_Head_ctrl/fox_Jaw1_ctrl/fox_Jaw2_ctrl
+        weight: 1
+      - path: GeneralController001/fox_Pelvis1_ctrl/fox_Spine1_ctrl/fox_Spine2_ctrl/fox_Spine3_ctrl/fox_Spine4_ctrl/fox_Spine5_ctrl/fox_Neck1_ctrl/fox_Neck2_ctrl/fox_Head_ctrl/fox_Snout_ctrl
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp/fox_r_ToeLift_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp/fox_r_ToeLift_hlp/fox_r_HeelPeel_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp/fox_r_ToeLift_hlp/fox_r_HeelPeel_hlp/fox_r_Ankle_bone
+          1
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp/fox_r_ToeLift_hlp/fox_r_HeelPeel_hlp/fox_r_ball_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp/fox_r_ToeLift_hlp/fox_r_HeelPeel_hlp/fox_r_Carpal_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp/fox_r_ToeLift_hlp/fox_r_ToeTap_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_Foot_ctrl/fox_r_Heel_hlp/fox_r_ToeLift_hlp/fox_r_ToeTap_hlp/fox_r_Toe_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp/fox_r_ToeLiftHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp/fox_r_ToeLiftHind_hlp/fox_r_HeelPeelHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp/fox_r_ToeLiftHind_hlp/fox_r_HeelPeelHind_hlp/fox_r_AnkleHind_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp/fox_r_ToeLiftHind_hlp/fox_r_HeelPeelHind_hlp/fox_r_ballHind_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp/fox_r_ToeLiftHind_hlp/fox_r_HeelPeelHind_hlp/fox_r_TarsalHind_IKGoal
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp/fox_r_ToeLiftHind_hlp/fox_r_ToeTapHind_hlp
+        weight: 1
+      - path: GeneralController001/fox_r_FootHind_ctrl/fox_r_HeelHind_hlp/fox_r_ToeLiftHind_hlp/fox_r_ToeTapHind_hlp/fox_r_ToeHind_IKGoal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_run
+      takeName: Take 001
+      firstFrame: 33
+      lastFrame: 53
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_attack1
+      takeName: Take 001
+      firstFrame: 53
+      lastFrame: 91
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_attack2
+      takeName: Take 001
+      firstFrame: 94
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_bite
+      takeName: Take 001
+      firstFrame: 119
+      lastFrame: 144
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_growl
+      takeName: Take 001
+      firstFrame: 144
+      lastFrame: 210
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_idle
+      takeName: Take 001
+      firstFrame: 211
+      lastFrame: 355
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_jump
+      takeName: Take 001
+      firstFrame: 358
+      lastFrame: 406
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_eat
+      takeName: Take 001
+      firstFrame: 409
+      lastFrame: 583
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_hit
+      takeName: Take 001
+      firstFrame: 584
+      lastFrame: 648
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_die
+      takeName: Take 001
+      firstFrame: 649
+      lastFrame: 685
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fox_sneak
+      takeName: Take 001
+      firstFrame: 688
+      lastFrame: 748
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
