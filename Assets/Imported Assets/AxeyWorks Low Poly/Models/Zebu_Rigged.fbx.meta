@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: 37208d5536e39ec45a96994b9acbe24f
+timeCreated: 1462705916
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: bone.01
+    100004: bone.02
+    100006: bone.03
+    100008: bone.03_end
+    100010: foot
+    100012: foot.001
+    100014: foot.002
+    100016: foot.003
+    100018: head
+    100020: head_end
+    100022: heel
+    100024: heel.001
+    100026: heel.002
+    100028: heel.003
+    100030: heel.003_end
+    100032: heel.004
+    100034: heel.004_end
+    100036: heel.005
+    100038: heel.006
+    100040: heel.006_end
+    100042: heel.02
+    100044: heel.02_end
+    100046: hips
+    100048: Mesh1 Model
+    100050: neck
+    100052: ribs
+    100054: shin
+    100056: shin.001
+    100058: shin.002
+    100060: shin.003
+    100062: spine
+    100064: thigh
+    100066: thigh.001
+    100068: thigh.002
+    100070: thigh.003
+    100072: toe
+    100074: toe.001
+    100076: toe.001_end
+    100078: toe.002
+    100080: toe.002_end
+    100082: toe.003
+    100084: toe.003_end
+    100086: toe_end
+    100088: //RootNode
+    400000: Armature
+    400002: bone.01
+    400004: bone.02
+    400006: bone.03
+    400008: bone.03_end
+    400010: foot
+    400012: foot.001
+    400014: foot.002
+    400016: foot.003
+    400018: head
+    400020: head_end
+    400022: heel
+    400024: heel.001
+    400026: heel.002
+    400028: heel.003
+    400030: heel.003_end
+    400032: heel.004
+    400034: heel.004_end
+    400036: heel.005
+    400038: heel.006
+    400040: heel.006_end
+    400042: heel.02
+    400044: heel.02_end
+    400046: hips
+    400048: Mesh1 Model
+    400050: neck
+    400052: ribs
+    400054: shin
+    400056: shin.001
+    400058: shin.002
+    400060: shin.003
+    400062: spine
+    400064: thigh
+    400066: thigh.001
+    400068: thigh.002
+    400070: thigh.003
+    400072: toe
+    400074: toe.001
+    400076: toe.001_end
+    400078: toe.002
+    400080: toe.002_end
+    400082: toe.003
+    400084: toe.003_end
+    400086: toe_end
+    400088: //RootNode
+    4300000: Mesh1 Model
+    9500000: //RootNode
+    13700000: Mesh1 Model
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SceneTerrain-Water-BaseMeshMat
+  m_Shader: {fileID: 4800000, guid: 3d6bc97a29b0a264c8bf02b641c7af96, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DiffuseIBL
+        second:
+          m_Texture: {fileID: 8900000, guid: 25b72d9d6b0d2074b916582e14bba30b, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Illum
+        second:
+          m_Texture: {fileID: 8900000, guid: 25b72d9d6b0d2074b916582e14bba30b, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ReflectionCube
+        second:
+          m_Texture: {fileID: 8900000, guid: 810393e7e25997d46811d185a8c160df, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ReflectionCubemap
+        second:
+          m_Texture: {fileID: 8900000, guid: 8897a0a0f3cc8de47a3fc4667d210179, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _IBLBrightness
+        second: 0
+      data:
+        first:
+          name: _CubeIntensity
+        second: 0
+      data:
+        first:
+          name: _CubeMipLevel
+        second: 1
+      data:
+        first:
+          name: _ReflectionAmount
+        second: .319000006
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
+      data:
+        first:
+          name: _ReflectionTint
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _DiffuseTint
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _ReflectionColor
+        second: {r: .354995668, g: .424296051, b: .492647052, a: 1}
