@@ -14,13 +14,17 @@ public class DayNightCycle : MonoBehaviour {
 
     //Sun Rotation
     public float timeOfDay;
-    public bool fastForward;
     public float nightDuration;
-    private float nightTimer;
+
+    //Fast forwarding
+    public float timeMod;
+    public float normalDay;
+    public float FFDay;
 
     void Awake()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        timeMod = normalDay;
     }
 
     void Start () {
@@ -49,15 +53,19 @@ public class DayNightCycle : MonoBehaviour {
     void CycleLighting () {
         if (GM.gameTimer > 0)
         {
-            if (!fastForward)
+            if (!GM.fastForwardTime)
             {
-                timeOfDay += Time.deltaTime / 150;
+                timeMod = Mathf.Lerp(timeMod, normalDay, Time.deltaTime);
             }
             else
             {
-                timeOfDay += Time.deltaTime;
+                timeMod = Mathf.Lerp(timeMod, FFDay, Time.deltaTime);
             }
+
+            timeOfDay += Time.deltaTime / timeMod;
         }
+
+
 
         //Move Sun and change brightness
         sunLight.transform.rotation = Quaternion.Lerp(Quaternion.LookRotation(-transform.right, transform.up), Quaternion.LookRotation(transform.right, transform.forward), timeOfDay);
@@ -76,20 +84,16 @@ public class DayNightCycle : MonoBehaviour {
         {
             if (timeOfDay < 0.5f)
             {
-                mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, Mathf.Lerp(1, 0, timeOfDay * 3));
+                mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, Mathf.Lerp(1, 0.05f, timeOfDay * 3));
             } else
             {
-                mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, Mathf.Lerp(0, 1, (timeOfDay * 2) - 1));
+                mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, Mathf.Lerp(0.05f, 1, (timeOfDay * 2) - 1));
             }
         }
 
         if (timeOfDay > 1)
         {
-            nightTimer += Time.deltaTime;
-            if (nightTimer > nightDuration)
-            {
-                timeOfDay = 0;
-            }
+            timeOfDay = 0;
         }
     }
 }

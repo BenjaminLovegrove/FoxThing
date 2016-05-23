@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     private int foxCount;
     private bool lerpStarted;
 
+    public bool fastForwardTime;
+
     void Awake()
     {
         lerpStarted = false;
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour {
             LerpCamera();
         } else if (lerpStarted)
         {
+            foxes[foxCount - 1].transform.parent.gameObject.SendMessage("PupStart");
             foxCount--;
             lerpStarted = false;
         }
@@ -61,4 +64,17 @@ public class GameManager : MonoBehaviour {
     {
         gameStarted = true;
     }
+
+    public void FastForward(bool check)
+    {
+        if (check)
+        {
+            fastForwardTime = true;
+        } else
+        {
+            fastForwardTime = false;
+        }
+    }
+
+
 }

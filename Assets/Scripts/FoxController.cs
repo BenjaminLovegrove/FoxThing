@@ -9,7 +9,6 @@ public class FoxController : MonoBehaviour {
     private Rigidbody foxRB;
     private Animation foxAnim;
     private Vector3 forwardForce;
-    private Renderer myRend;
     public AudioSource footstepsSFX;
     public AudioSource footstepsSlowSFX;
 
@@ -24,12 +23,19 @@ public class FoxController : MonoBehaviour {
     private bool grounded;
     private float recentlyJumped;
 
+    public bool death;
+    private bool removedFox;
+    private float deathTimer;
+    private bool playOnce;
+
     void Awake()
     {
-        myRend = gameObject.GetComponentInChildren<Renderer>();
         foxRB = gameObject.GetComponent<Rigidbody>();
         foxAnim = gameObject.GetComponent<Animation>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        death = false;
+        removedFox = false;
+        playOnce = false;
     }
 
     void Start () {
@@ -38,18 +44,18 @@ public class FoxController : MonoBehaviour {
     }
 
     void Update () {
+        if (death)
+        {
+            TheBellsToll();
+            return;
+        }
+
         Animate();
         CheckGrounded();
         Controls();
 
         //Jump Timer (for sfx, anims, etc)
         recentlyJumped -= Time.deltaTime;
-
-        //Delete me once Im all used up
-       if (!myRend.isVisible && GM.gameTimer > 5)
-        {
-            Destroy(this);
-        }
 	}
 
     void FixedUpdate()
@@ -76,6 +82,8 @@ public class FoxController : MonoBehaviour {
         {
             transform.Rotate(-Vector3.up * Input.GetAxis("Horizontal") * currentTurnSpeed * Time.deltaTime);
         }
+
+        //Sneak
     }
 
     void Move()
@@ -168,5 +176,33 @@ public class FoxController : MonoBehaviour {
         Ray groundRay = new Ray((transform.position + transform.up * 0.2f), -transform.up);
         grounded = Physics.Raycast(groundRay, 0.25f);
         Debug.DrawRay(transform.position, -transform.up);
+    }
+
+    void TheBellsToll()
+    {
+        deathTimer += Time.deltaTime;
+        if (!removedFox)
+        {
+            GM.FastForward(true);
+        }
+
+        if (!playOnce)
+        {
+            foxAnim["fox_die"].speed = 0.2f;
+            foxAnim["fox_die"].wrapMode = WrapMode.Once;
+            foxAnim.CrossFade("fox_die");
+            playOnce = true;
+        }
+
+        if (deathTimer > 4f && !removedFox)
+        {
+            removedFox = true;
+            GM.StartLerp();
+        }
+
+        if (deathTimer > 10)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

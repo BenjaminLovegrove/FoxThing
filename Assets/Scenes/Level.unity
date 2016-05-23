@@ -235,8 +235,10 @@ MonoBehaviour:
   sunLight: {fileID: 0}
   moonLight: {fileID: 0}
   timeOfDay: 0.2
-  fastForward: 0
   nightDuration: 2
+  timeMod: 120
+  normalDay: 120
+  FFDay: 1
 --- !u!1001 &239837553
 Prefab:
   m_ObjectHideFlags: 0
@@ -2083,7 +2085,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTimer: 0
   camLerp: 1
-  camLerpTime: 0
+  camLerpTime: 10
+  fastForwardTime: 0
 --- !u!1 &1695172182
 GameObject:
   m_ObjectHideFlags: 0

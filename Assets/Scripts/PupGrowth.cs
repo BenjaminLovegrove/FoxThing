@@ -3,10 +3,17 @@ using System.Collections;
 
 public class PupGrowth : MonoBehaviour {
 
+    private GameManager GM;
+
     public bool grow;
     public float timeToGrow;
-	
-	void Update () {
+
+    void Awake()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    void Update () {
         if (grow)
         {
             if (transform.localScale.x < 1)
@@ -15,6 +22,7 @@ public class PupGrowth : MonoBehaviour {
             }
             else
             {
+                GM.FastForward(false);
                 gameObject.GetComponent<FoxController>().enabled = true;
             }
         }
