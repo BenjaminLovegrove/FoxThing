@@ -15,15 +15,14 @@ public class GameManager : MonoBehaviour {
     private Vector3 lerpStartPos;
     private int foxCount;
     private bool lerpStarted;
+    private Transform endCamPos;
 
     public bool fastForwardTime;
 
     void Awake()
     {
+        endCamPos = GameObject.Find("EndCamPos").transform;
         lerpStarted = false;
-    }
-
-	void Start () {
         foxes = GameObject.FindGameObjectsWithTag("FoxLookAt");
         camLookAt = GameObject.Find("LookAtObj").transform;
         foxCount = foxes.Length;
@@ -40,7 +39,10 @@ public class GameManager : MonoBehaviour {
             LerpCamera();
         } else if (lerpStarted)
         {
-            foxes[foxCount - 1].transform.parent.gameObject.SendMessage("PupStart");
+            if (foxCount > 0)
+            {
+                foxes[foxCount - 1].transform.parent.gameObject.SendMessage("PupStart");
+            }
             foxCount--;
             lerpStarted = false;
         }
@@ -48,13 +50,26 @@ public class GameManager : MonoBehaviour {
 
     void LerpCamera()
     {
-        camLerp += Time.deltaTime / camLerpTime;
-        camLookAt.transform.position = Vector3.Lerp(lerpStartPos, foxes[foxCount - 1].transform.position, camLerp);
+        if (foxCount > 0)
+        {
+            camLerp += Time.deltaTime / camLerpTime;
+            camLookAt.transform.position = Vector3.Lerp(lerpStartPos, foxes[foxCount - 1].transform.position, camLerp);
+        } else
+        {
+            camLerp += Time.deltaTime / (camLerpTime * 1.5f);
+            camLookAt.transform.position = Vector3.Lerp(lerpStartPos, endCamPos.transform.position, camLerp);
+        }
     }
 
     public void StartLerp()
     {
-        camLookAt.parent = foxes[foxCount - 1].transform;
+        if (foxCount > 0)
+        {
+            camLookAt.parent = foxes[foxCount - 1].transform;
+        } else
+        {
+            camLookAt.parent = endCamPos;
+        }
         lerpStartPos = camLookAt.transform.position;
         camLerp = 0;
         lerpStarted = true;

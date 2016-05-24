@@ -4,6 +4,7 @@ using System.Collections;
 public class PupGrowth : MonoBehaviour {
 
     private GameManager GM;
+    private Animation foxCubAnim;
 
     public bool grow;
     public float timeToGrow;
@@ -11,6 +12,7 @@ public class PupGrowth : MonoBehaviour {
     void Awake()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        foxCubAnim = gameObject.GetComponent<Animation>();
     }
 
     void Update () {
@@ -24,6 +26,13 @@ public class PupGrowth : MonoBehaviour {
             {
                 GM.FastForward(false);
                 gameObject.GetComponent<FoxController>().enabled = true;
+                Destroy(this);
+            }
+        } else
+        {
+            if (!foxCubAnim.isPlaying)
+            {
+                foxCubAnim.Play("fox_eat");
             }
         }
 	}

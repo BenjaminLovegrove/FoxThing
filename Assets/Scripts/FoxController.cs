@@ -24,6 +24,7 @@ public class FoxController : MonoBehaviour {
     private float recentlyJumped;
 
     public bool death;
+    private bool successful;
     private bool removedFox;
     private float deathTimer;
     private bool playOnce;
@@ -60,7 +61,10 @@ public class FoxController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        Move();
+        if (!death)
+        {
+            Move();
+        }
     }
 
     void Controls()
@@ -178,6 +182,23 @@ public class FoxController : MonoBehaviour {
         Debug.DrawRay(transform.position, -transform.up);
     }
 
+    void EatBunny(Vector3 loc)
+    {
+        Vector3 dir = (loc - transform.position).normalized;
+        transform.rotation = Quaternion.LookRotation(dir);
+        successful = true;
+        death = true;
+        footstepsSFX.Stop();
+    }
+
+    void Killed(Vector3 loc)
+    {
+        Vector3 dir = (loc - transform.position).normalized;
+        transform.rotation = Quaternion.LookRotation(dir);
+        death = true;
+        footstepsSFX.Stop();
+    }
+
     void TheBellsToll()
     {
         deathTimer += Time.deltaTime;
@@ -186,11 +207,19 @@ public class FoxController : MonoBehaviour {
             GM.FastForward(true);
         }
 
-        if (!playOnce)
+        if (!playOnce && !successful)
         {
             foxAnim["fox_die"].speed = 0.2f;
             foxAnim["fox_die"].wrapMode = WrapMode.Once;
             foxAnim.CrossFade("fox_die");
+            playOnce = true;
+        } else if (!playOnce)
+        {
+            foxAnim["fox_bite"].wrapMode = WrapMode.Once;
+            foxAnim.CrossFade("fox_bite");
+            foxAnim.PlayQueued("fox_eat");
+            foxAnim.PlayQueued("fox_eat");
+            foxAnim.PlayQueued("fox_eat");
             playOnce = true;
         }
 
@@ -200,7 +229,7 @@ public class FoxController : MonoBehaviour {
             GM.StartLerp();
         }
 
-        if (deathTimer > 10)
+        if (deathTimer > 25)
         {
             Destroy(this.gameObject);
         }
