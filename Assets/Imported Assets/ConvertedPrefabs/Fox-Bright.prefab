@@ -592,6 +592,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &145912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 455590}
+  - 136: {fileID: 13672564}
+  m_Layer: 9
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &145972
 GameObject:
   m_ObjectHideFlags: 1
@@ -1769,7 +1785,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74431896, y: -0.49161434, z: 0.647}
+  m_LocalPosition: {x: 0.74431896, y: 0.356, z: 0.658}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 407330}
@@ -1778,6 +1794,7 @@ Transform:
   - {fileID: 402218}
   - {fileID: 498270}
   - {fileID: 424846}
+  - {fileID: 455590}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &408864
@@ -2426,6 +2443,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 468810}
   m_RootOrder: 0
+--- !u!4 &455590
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145912}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0.037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408166}
+  m_RootOrder: 6
 --- !u!4 &456192
 Transform:
   m_ObjectHideFlags: 1
@@ -3147,8 +3176,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.35, z: 0.7}
-  m_Center: {x: 0, y: 0.17, z: 0}
+  m_Size: {x: 0.25, y: 0.23, z: 0.75}
+  m_Center: {x: 0, y: 0.18, z: 0.04}
 --- !u!82 &8225244
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3354,6 +3383,19 @@ MonoBehaviour:
   turnSpeed: 120
   jumpPower: 5
   death: 0
+--- !u!136 &13672564
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18
+  m_Height: 0.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13739798
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

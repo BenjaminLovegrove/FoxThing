@@ -53,6 +53,7 @@ public class FoxController : MonoBehaviour {
 
         Animate();
         CheckGrounded();
+        CheckWater();
         Controls();
 
         //Jump Timer (for sfx, anims, etc)
@@ -180,6 +181,13 @@ public class FoxController : MonoBehaviour {
         Ray groundRay = new Ray((transform.position + transform.up * 0.2f), -transform.up);
         grounded = Physics.Raycast(groundRay, 0.4f);
         Debug.DrawRay(transform.position, -transform.up);
+    }
+
+    void CheckWater()
+    {
+        Ray waterRay = new Ray((transform.position + (transform.forward * 0.5f) + (transform.up * 0.2f)), -transform.up);
+        grounded = Physics.Raycast(waterRay, 0.4f);
+        Debug.DrawRay((transform.position + (transform.forward * 0.5f) + (transform.up * 0.2f)), -transform.up);
     }
 
     void EatBunny(Vector3 loc)

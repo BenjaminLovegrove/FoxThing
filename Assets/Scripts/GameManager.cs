@@ -16,7 +16,11 @@ public class GameManager : MonoBehaviour {
     private int foxCount;
     private bool lerpStarted;
     private Transform endCamPos;
+    private GameObject bunnyProp;
+
+    //Hacks for camera "cinemaic" smoothing
     private Vector3 lerpToPos;
+    private Vector3 tempPos;
 
     public bool fastForwardTime;
 
@@ -27,6 +31,7 @@ public class GameManager : MonoBehaviour {
         foxes = GameObject.FindGameObjectsWithTag("FoxLookAt");
         camLookAt = GameObject.Find("LookAtObj").transform;
         foxCount = foxes.Length;
+        bunnyProp = GameObject.Find("Rabbit-Dead");
     }
 
     void Update() {
@@ -43,7 +48,6 @@ public class GameManager : MonoBehaviour {
             if (foxCount > 0)
             {
                 foxes[foxCount - 1].transform.parent.gameObject.SendMessage("PupStart");
-                foxes[foxCount - 1].transform.position = lerpToPos;
             }
             foxCount--;
             lerpStarted = false;
@@ -60,9 +64,10 @@ public class GameManager : MonoBehaviour {
             if (camLerp < 0.85f)
             {
                 foxes[foxCount - 1].transform.Translate(transform.up * 2f * Time.deltaTime);
+                tempPos = foxes[foxCount - 1].transform.position;
             } else
             {
-                foxes[foxCount - 1].transform.Translate(-transform.up * 1f * Time.deltaTime);
+                foxes[foxCount - 1].transform.position = Vector3.Lerp(tempPos, lerpToPos, (camLerp - 0.85f) / 0.15f);
             }
 
         } else
@@ -78,6 +83,10 @@ public class GameManager : MonoBehaviour {
         {
             camLookAt.parent = foxes[foxCount - 1].transform;
             lerpToPos = foxes[foxCount - 1].transform.position;
+            if (foxCount == 1)
+            {
+                Destroy(bunnyProp);
+            }
         } else
         {
             camLookAt.parent = endCamPos;
