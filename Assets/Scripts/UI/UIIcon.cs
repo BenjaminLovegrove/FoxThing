@@ -19,7 +19,7 @@ public class UIIcon : MonoBehaviour {
         playerCam = Camera.main.transform;
 	}
 	
-	void Update () {
+	void LateUpdate () {
         //Position icon
         bunnyIcon.position = playerCam.position + ((posMarker.position - playerCam.position).normalized * 6);
 

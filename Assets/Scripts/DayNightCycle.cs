@@ -15,6 +15,7 @@ public class DayNightCycle : MonoBehaviour {
     //Sun Rotation
     public float timeOfDay;
     public float nightDuration;
+    private float nightTimer;
 
     //Fast forwarding
     public float timeMod;
@@ -55,11 +56,11 @@ public class DayNightCycle : MonoBehaviour {
         {
             if (!GM.fastForwardTime)
             {
-                timeMod = Mathf.Lerp(timeMod, normalDay, Time.deltaTime);
+                timeMod = Mathf.Lerp(timeMod, normalDay, Time.deltaTime / 2);
             }
             else
             {
-                timeMod = Mathf.Lerp(timeMod, FFDay, Time.deltaTime);
+                timeMod = Mathf.Lerp(timeMod, FFDay, Time.deltaTime / 2);
             }
 
             timeOfDay += Time.deltaTime / timeMod;
@@ -84,7 +85,7 @@ public class DayNightCycle : MonoBehaviour {
         {
             if (timeOfDay < 0.5f)
             {
-                mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, Mathf.Lerp(1, 0.05f, timeOfDay * 3));
+                mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, Mathf.Lerp(1, 0.05f, timeOfDay * 2.5f));
             } else
             {
                 mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, Mathf.Lerp(0.05f, 1, (timeOfDay * 2) - 1));
@@ -93,7 +94,12 @@ public class DayNightCycle : MonoBehaviour {
 
         if (timeOfDay > 1)
         {
-            timeOfDay = 0;
+            nightTimer += Time.deltaTime;
+            if (nightTimer > nightDuration)
+            {
+                nightTimer = 0;
+                timeOfDay = 0;
+            }
         }
     }
 }
