@@ -178,7 +178,7 @@ public class FoxController : MonoBehaviour {
     void CheckGrounded()
     {
         Ray groundRay = new Ray((transform.position + transform.up * 0.2f), -transform.up);
-        grounded = Physics.Raycast(groundRay, 0.25f);
+        grounded = Physics.Raycast(groundRay, 0.4f);
         Debug.DrawRay(transform.position, -transform.up);
     }
 

@@ -1382,8 +1382,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168144}
-  m_LocalRotation: {x: 0, y: 0.61518717, z: 0, w: 0.78838116}
-  m_LocalPosition: {x: -2.8316808, y: -0.51361436, z: 29.091064}
+  m_LocalRotation: {x: 0, y: 0.87568116, z: 0, w: -0.4828898}
+  m_LocalPosition: {x: 26.5, y: -0.51361436, z: 36.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421988}
@@ -1478,15 +1478,15 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 70b6a33dfffd05643846361b8407b1ab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 80
+  MinDistance: 3
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -1495,40 +1495,35 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0.016666668
+    - time: 0.0375
       value: 1
-      inSlope: -60.023987
-      outSlope: -60.023987
+      inSlope: -26.67737
+      outSlope: -26.67737
       tangentMode: 0
     - time: 0.045209818
       value: 0.5069841
-      inSlope: -15.005997
-      outSlope: -15.005997
+      inSlope: -6.6693425
+      outSlope: -6.6693425
       tangentMode: 0
     - time: 0.07854316
       value: 0.29190478
-      inSlope: -3.7514992
-      outSlope: -3.7514992
+      inSlope: -1.6673356
+      outSlope: -1.6673356
       tangentMode: 0
     - time: 0.1713381
       value: 0.12849206
-      inSlope: -0.9378748
-      outSlope: -0.9378748
+      inSlope: -0.4168339
+      outSlope: -0.4168339
       tangentMode: 0
     - time: 0.31417263
-      value: 0.0625
-      inSlope: -0.2344687
-      outSlope: -0.2344687
-      tangentMode: 0
-    - time: 0.53333336
-      value: 0.024265872
-      inSlope: -0.058617175
-      outSlope: -0.058617175
+      value: 0.041346155
+      inSlope: -0.10420848
+      outSlope: -0.10420848
       tangentMode: 0
     - time: 1
-      value: 0.003169734
-      inSlope: -0.016673328
-      outSlope: -0.016673328
+      value: 0.024265872
+      inSlope: -0.037514977
+      outSlope: -0.037514977
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

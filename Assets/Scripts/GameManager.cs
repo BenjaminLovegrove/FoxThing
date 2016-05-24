@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     private int foxCount;
     private bool lerpStarted;
     private Transform endCamPos;
+    private Vector3 lerpToPos;
 
     public bool fastForwardTime;
 
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour {
             if (foxCount > 0)
             {
                 foxes[foxCount - 1].transform.parent.gameObject.SendMessage("PupStart");
+                foxes[foxCount - 1].transform.position = lerpToPos;
             }
             foxCount--;
             lerpStarted = false;
@@ -54,6 +56,15 @@ public class GameManager : MonoBehaviour {
         {
             camLerp += Time.deltaTime / camLerpTime;
             camLookAt.transform.position = Vector3.Lerp(lerpStartPos, foxes[foxCount - 1].transform.position, camLerp);
+
+            if (camLerp < 0.85f)
+            {
+                foxes[foxCount - 1].transform.Translate(transform.up * 2f * Time.deltaTime);
+            } else
+            {
+                foxes[foxCount - 1].transform.Translate(-transform.up * 1f * Time.deltaTime);
+            }
+
         } else
         {
             camLerp += Time.deltaTime / (camLerpTime * 1.5f);
@@ -66,6 +77,7 @@ public class GameManager : MonoBehaviour {
         if (foxCount > 0)
         {
             camLookAt.parent = foxes[foxCount - 1].transform;
+            lerpToPos = foxes[foxCount - 1].transform.position;
         } else
         {
             camLookAt.parent = endCamPos;

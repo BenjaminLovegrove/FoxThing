@@ -32,8 +32,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139232}
-  m_LocalRotation: {x: -0.011433371, y: 0.9881453, z: -0.09255148, w: -0.12195251}
-  m_LocalPosition: {x: 12.53, y: 1.03, z: 24.07}
+  m_LocalRotation: {x: 0.059125148, y: 0.33454093, z: -0.03132283, w: 0.9400029}
+  m_LocalPosition: {x: 57.57, y: 1.07, z: 45.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,7 +90,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b877d82d05b0c5047ba9d5ecc157dd75, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.45
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -172,11 +172,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualizeFocus: 0
-  focalLength: 4
-  focalSize: 0.4
+  focalLength: 3.5
+  focalSize: 0.45
   aperture: 0.45
   focalTransform: {fileID: 0}
-  maxBlurSize: 2
+  maxBlurSize: 1
   highResolution: 1
   blurType: 0
   blurSampleCount: 2
