@@ -32,8 +32,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139232}
-  m_LocalRotation: {x: 0.057404593, y: 0.38328433, z: -0.034374647, w: 0.92120373}
-  m_LocalPosition: {x: 57.57, y: 1.07, z: 45.06}
+  m_LocalRotation: {x: 0.0017660937, y: 0.35712978, z: -0.009372231, w: 0.9340061}
+  m_LocalPosition: {x: 57.48, y: 0.69, z: 45.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -512,11 +512,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Radius: 0.8
   m_SampleCount: 1
-  m_OcclusionIntensity: 1.5
-  m_Blur: 2
-  m_Downsampling: 2
+  m_OcclusionIntensity: 1
+  m_Blur: 3
+  m_Downsampling: 1
   m_OcclusionAttenuation: 1
-  m_MinZ: 0.01
+  m_MinZ: 0.2
   m_SSAOShader: {fileID: 4800000, guid: 43ca18288c424f645aaa1e9e07f04c50, type: 3}
   m_RandomTexture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
 --- !u!114 &11482912

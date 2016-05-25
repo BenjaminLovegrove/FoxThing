@@ -21,6 +21,7 @@ public class FoxController : MonoBehaviour {
     private float currentMaxVel;
     private float currentTurnSpeed;
     private bool grounded;
+    private bool waterCheck;
     private float recentlyJumped;
 
     public bool death;
@@ -105,9 +106,12 @@ public class FoxController : MonoBehaviour {
         }
 
         //Add forces
-        if (foxRB.velocity.sqrMagnitude < currentMaxVel)
+        if (!waterCheck || (Input.GetAxis("Vertical") < 0))
         {
-            foxRB.AddForce(transform.forward * Input.GetAxis("Vertical") * acceleration * Time.deltaTime);
+            if (foxRB.velocity.sqrMagnitude < currentMaxVel)
+            {
+                foxRB.AddForce(transform.forward * Input.GetAxis("Vertical") * acceleration * Time.deltaTime);
+            }
         }
 
         //Play SFX
@@ -186,7 +190,18 @@ public class FoxController : MonoBehaviour {
     void CheckWater()
     {
         Ray waterRay = new Ray((transform.position + (transform.forward * 0.5f) + (transform.up * 0.2f)), -transform.up);
-        grounded = Physics.Raycast(waterRay, 0.4f);
+        RaycastHit hit;
+        if (Physics.Raycast(waterRay, out hit, 0.4f))
+        {
+            if (hit.collider.gameObject.tag == "Water")
+            {
+                waterCheck = true;
+            }
+            else
+            {
+                waterCheck = false;
+            }
+        }
         Debug.DrawRay((transform.position + (transform.forward * 0.5f) + (transform.up * 0.2f)), -transform.up);
     }
 
