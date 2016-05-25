@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour {
         if (foxCount > 0)
         {
             camLerp += Time.deltaTime / camLerpTime;
-            camLookAt.transform.position = Vector3.Lerp(lerpStartPos, foxes[foxCount - 1].transform.position, camLerp);
 
             if (camLerp < 0.85f)
             {
@@ -75,6 +74,8 @@ public class GameManager : MonoBehaviour {
             camLerp += Time.deltaTime / (camLerpTime * 1.5f);
             camLookAt.transform.position = Vector3.Lerp(lerpStartPos, endCamPos.transform.position, camLerp);
         }
+
+        camLookAt.transform.position = Vector3.Lerp(lerpStartPos, foxes[foxCount - 1].transform.position, camLerp);
     }
 
     public void StartLerp()
