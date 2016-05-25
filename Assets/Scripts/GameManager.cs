@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
     //Components
     private GameObject[] foxes;
     private Transform camLookAt;
+    public FadeIn fadeToBlack;
 
     //Variables
     private bool gameStarted;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour {
     public GameObject[] dayObjects;
     private bool switchedObjects;
     private int dayCount = 0;
+    private bool faded = false;
 
     void Awake()
     {
@@ -84,7 +86,12 @@ public class GameManager : MonoBehaviour {
 
         } else
         {
-            camLerp += Time.deltaTime / (camLerpTime * 1.5f);
+            if (!faded)
+            {
+                fadeToBlack.FadeOut(camLerp * 2.5f);
+                faded = true;
+            }
+            camLerp += Time.deltaTime / (camLerpTime * 2.5f);
             camLookAt.transform.position = Vector3.Lerp(lerpStartPos, endCamPos.transform.position, camLerp);
         }
     }
