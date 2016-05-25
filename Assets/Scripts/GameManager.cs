@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour {
         {
             if (!faded)
             {
-                fadeToBlack.FadeOut(camLerp * 2.5f);
+                fadeToBlack.FadeOut(camLerpTime * 2.5f);
                 faded = true;
             }
             camLerp += Time.deltaTime / (camLerpTime * 2.5f);
@@ -133,5 +133,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
