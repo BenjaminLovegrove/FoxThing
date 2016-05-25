@@ -22,7 +22,11 @@ public class GameManager : MonoBehaviour {
     private Vector3 lerpToPos;
     private Vector3 tempPos;
 
+    //Fast forward to future
     public bool fastForwardTime;
+    public GameObject[] dayObjects;
+    private bool switchedObjects;
+    private int dayCount = 0;
 
     void Awake()
     {
@@ -32,6 +36,7 @@ public class GameManager : MonoBehaviour {
         camLookAt = GameObject.Find("LookAtObj").transform;
         foxCount = foxes.Length;
         bunnyProp = GameObject.Find("Rabbit-Dead");
+        switchedObjects = false;
     }
 
     void Update() {
@@ -66,20 +71,28 @@ public class GameManager : MonoBehaviour {
                 tempPos = foxes[foxCount - 1].transform.position;
             } else
             {
+                if (!switchedObjects)
+                {
+                    switchedObjects = true;
+                    dayObjects[dayCount - 1].SetActive(false);
+                    dayObjects[dayCount].SetActive(true);
+                }
                 foxes[foxCount - 1].transform.position = Vector3.Lerp(tempPos, lerpToPos, (camLerp - 0.85f) / 0.15f);
             }
+
+            camLookAt.transform.position = Vector3.Lerp(lerpStartPos, foxes[foxCount - 1].transform.position, camLerp);
 
         } else
         {
             camLerp += Time.deltaTime / (camLerpTime * 1.5f);
             camLookAt.transform.position = Vector3.Lerp(lerpStartPos, endCamPos.transform.position, camLerp);
         }
-
-        camLookAt.transform.position = Vector3.Lerp(lerpStartPos, foxes[foxCount - 1].transform.position, camLerp);
     }
 
     public void StartLerp()
     {
+        dayCount++;
+        switchedObjects = false;
         if (foxCount > 0)
         {
             camLookAt.parent = foxes[foxCount - 1].transform;

@@ -23,6 +23,7 @@ public class FoxController : MonoBehaviour {
     private bool grounded;
     private bool waterCheck;
     private float recentlyJumped;
+    private bool stealthing;
 
     public bool death;
     private bool successful;
@@ -38,6 +39,7 @@ public class FoxController : MonoBehaviour {
         death = false;
         removedFox = false;
         playOnce = false;
+        foxAnim["fox_sneak"].speed = 1.5f;
     }
 
     void Start () {
@@ -71,6 +73,15 @@ public class FoxController : MonoBehaviour {
 
     void Controls()
     {
+        //Stealth check
+       if (Input.GetButton("Fire3"))
+        {
+            stealthing = true;
+        } else
+        {
+            stealthing = false;
+        }
+
         //Jump
         if (Input.GetButtonDown("Jump") && grounded && recentlyJumped < 0)
         {
@@ -80,7 +91,7 @@ public class FoxController : MonoBehaviour {
         }
 
         //Turn fox, reversed if going backwards - moved to here for non fixed update
-        if (Input.GetAxis("Vertical") >= 0)
+        if (Input.GetAxis("Vertical") >= -10) //made this redundant (never gets to -10), because of controller vs keyboard differences I dont have time to account for
         {
             transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * currentTurnSpeed * Time.deltaTime);
         }
@@ -88,14 +99,16 @@ public class FoxController : MonoBehaviour {
         {
             transform.Rotate(-Vector3.up * Input.GetAxis("Horizontal") * currentTurnSpeed * Time.deltaTime);
         }
-
-        //Sneak
     }
 
     void Move()
     {
         //Set max vol for reverse
-        if (Input.GetAxis("Vertical") <= 0)
+        if (stealthing)
+        {
+            currentMaxVel = 1.5f;
+            currentTurnSpeed = turnSpeed / 3;
+        } else if (Input.GetAxis("Vertical") <= 0)
         {
             currentMaxVel = 2f;
             currentTurnSpeed = turnSpeed / 3;
@@ -145,7 +158,15 @@ public class FoxController : MonoBehaviour {
             //Walking anims
             if (Input.GetAxis("Vertical") > 0 || foxRB.velocity.magnitude > 0)
             {
-                if (foxRB.velocity.sqrMagnitude > 10f && !foxAnim.IsPlaying("fox_run") && Input.GetAxis("Vertical") > 0)
+
+                if (stealthing)
+                {
+                    if (grounded && !foxAnim.IsPlaying("fox_sneak"))
+                    {
+                        foxAnim.CrossFade("fox_sneak");
+                    }
+                }
+                else if (foxRB.velocity.sqrMagnitude > 10f && !foxAnim.IsPlaying("fox_run") && Input.GetAxis("Vertical") > 0)
                 {
                     foxAnim.CrossFade("fox_run");
                 }
@@ -154,7 +175,7 @@ public class FoxController : MonoBehaviour {
                     foxAnim.CrossFade("fox_walk");
                 }
             }
-            else if (foxRB.velocity.sqrMagnitude == 0 && !foxAnim.IsPlaying("fox_idle"))
+            else if (foxRB.velocity.sqrMagnitude == 0f && !foxAnim.IsPlaying("fox_idle"))
             {
                 foxAnim.CrossFade("fox_idle");
             }
