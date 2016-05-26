@@ -634,6 +634,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &179358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 494684}
+  - 82: {fileID: 8299250}
+  m_Layer: 8
+  m_Name: BellToll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &181902
 GameObject:
   m_ObjectHideFlags: 1
@@ -1383,11 +1399,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168144}
   m_LocalRotation: {x: 0, y: 0.87568116, z: 0, w: -0.4828898}
-  m_LocalPosition: {x: 26.5, y: -0.51361436, z: 36.4}
+  m_LocalPosition: {x: 83.17971, y: 0.044048786, z: 78.22532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421988}
   - {fileID: 475502}
+  - {fileID: 494684}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &489116
@@ -1442,6 +1459,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471510}
   m_RootOrder: 0
+--- !u!4 &494684
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 488678}
+  m_RootOrder: 2
 --- !u!4 &495700
 Transform:
   m_ObjectHideFlags: 1
@@ -1561,6 +1590,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &8299250
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179358}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b136a1fc76cfa334bb7b8884779f1f2e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9593970
 Animator:
   serializedVersion: 3
@@ -1592,6 +1695,7 @@ MonoBehaviour:
   bellsRigning: {fileID: 8300000, guid: 194ce26d8662f7940affaf8eecfa71b8, type: 3}
   alertedSFX: {fileID: 8300000, guid: 7a5bfe4e507aabf4e92e318134a8c378, type: 3}
   yellingCrowd: {fileID: 8300000, guid: 93c79b9512b6c12439f3fcda67a9a0e5, type: 3}
+  bellToll: {fileID: 8299250}
 --- !u!135 &13579608
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
     //Components
-    private GameObject[] foxes;
+    public GameObject[] foxes;
     private Transform camLookAt;
     public FadeIn fadeToBlack;
 
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
     {
         endCamPos = GameObject.Find("EndCamPos").transform;
         lerpStarted = false;
-        foxes = GameObject.FindGameObjectsWithTag("FoxLookAt");
+        //foxes = GameObject.FindGameObjectsWithTag("FoxLookAt");
         camLookAt = GameObject.Find("LookAtObj").transform;
         foxCount = foxes.Length;
         bunnyProp = GameObject.Find("Rabbit-Dead");
