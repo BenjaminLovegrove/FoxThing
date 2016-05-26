@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour {
         if (gameStarted)
         {
             gameTimer += Time.deltaTime;
+            Cursor.visible = false;
+        } else
+        {
+            Cursor.visible = true;
         }
 
         if (camLerp < 1)

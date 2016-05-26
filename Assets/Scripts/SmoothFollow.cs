@@ -36,7 +36,7 @@ public class SmoothFollow : MonoBehaviour
         originalRot = target.transform.localRotation;
     }
 
-    void LateUpdate()
+    void Update()
     {
         // Early out if we don't have a target
         if (!target) return;

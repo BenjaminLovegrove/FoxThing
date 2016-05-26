@@ -39,7 +39,7 @@ public class FoxController : MonoBehaviour {
         death = false;
         removedFox = false;
         playOnce = false;
-        foxAnim["fox_sneak"].speed = 1.5f;
+        foxAnim["fox_sneak"].speed = 2f;
     }
 
     void Start () {

@@ -36,6 +36,9 @@ public class Cowboy : MonoBehaviour {
         if (Input.GetButton("Fire3"))
         {
             myCollider.radius = startRadius * 0.7f;
+        } else
+        {
+            myCollider.radius = startRadius;
         }
     }
 

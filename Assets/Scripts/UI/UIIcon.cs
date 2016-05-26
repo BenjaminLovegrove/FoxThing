@@ -20,8 +20,6 @@ public class UIIcon : MonoBehaviour {
 	}
 	
 	void LateUpdate () {
-        //Position icon
-        bunnyIcon.position = playerCam.position + ((posMarker.position - playerCam.position).normalized * 6);
 
         //If too close, remove marker
         if (Vector3.Distance(playerCam.position, posMarker.position) < 20)
@@ -40,5 +38,9 @@ public class UIIcon : MonoBehaviour {
 
         //Set rotation to look at camera
         bunnyIcon.rotation = playerCam.rotation;
-	}
+
+        //Position icon
+        Vector3 dir = (posMarker.position - playerCam.position);
+        bunnyIcon.position = playerCam.position + (dir.normalized * 8);
+    }
 }
