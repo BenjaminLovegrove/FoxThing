@@ -46,9 +46,11 @@ public class GameManager : MonoBehaviour {
         {
             gameTimer += Time.deltaTime;
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         } else
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         if (camLerp < 1)
@@ -95,7 +97,7 @@ public class GameManager : MonoBehaviour {
                 fadeToBlack.FadeOut(camLerpTime * 2.5f);
                 faded = true;
             }
-            camLerp += Time.deltaTime / (camLerpTime * 2.5f);
+            camLerp += Time.deltaTime / (camLerpTime * 2.85f);
             camLookAt.transform.position = Vector3.Lerp(lerpStartPos, endCamPos.transform.position, camLerp);
         }
     }

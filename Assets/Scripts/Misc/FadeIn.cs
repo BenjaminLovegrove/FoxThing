@@ -15,6 +15,7 @@ public class FadeIn : MonoBehaviour {
     public Image img3;
     public Text txt1;
     public Text txt2;
+    public Image insImg;
 
     void Update()
     {
@@ -39,6 +40,7 @@ public class FadeIn : MonoBehaviour {
         img3.CrossFadeAlpha(0, 0f, false);
         txt1.CrossFadeAlpha(0, 0f, false);
         txt2.CrossFadeAlpha(0, 0f, false);
+        insImg.CrossFadeAlpha(0, 0f, false);
         fading = false;
         thisImg = gameObject.GetComponent<Image>();
         thisImg.CrossFadeAlpha(0, 2f, false);
@@ -47,6 +49,7 @@ public class FadeIn : MonoBehaviour {
         img3.CrossFadeAlpha(1, 2.5f, false);
         txt1.CrossFadeAlpha(1, 2.5f, false);
         txt2.CrossFadeAlpha(1, 2.5f, false);
+        insImg.CrossFadeAlpha(1, 2.5f, false);
     }
 
     public void FadeOut(float timer)
