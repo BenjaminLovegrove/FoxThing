@@ -87,6 +87,7 @@ public class FoxController : MonoBehaviour {
         {
             foxAnim.CrossFade("fox_jump", 0.2f);
             foxRB.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+            foxRB.AddForce(transform.forward * 20, ForceMode.Impulse);
             recentlyJumped = foxAnim["fox_jump"].length * 0.75f;
         }
 
