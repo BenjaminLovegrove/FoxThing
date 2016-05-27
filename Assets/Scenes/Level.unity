@@ -14299,19 +14299,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d794ac9ee067034a9353813fa14bdc0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7232028
+      value: -0.72320276
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d794ac9ee067034a9353813fa14bdc0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.03128003
+      value: -0.031280026
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d794ac9ee067034a9353813fa14bdc0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.10789669
+      value: -0.10789668
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d794ac9ee067034a9353813fa14bdc0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.68143797
+      value: 0.6814379
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d794ac9ee067034a9353813fa14bdc0, type: 3}
       propertyPath: m_RootOrder
@@ -42935,6 +42935,7 @@ MonoBehaviour:
   gameTimer: 0
   camLerp: 1
   camLerpTime: 15
+  foxCount: 0
   fastForwardTime: 0
   dayObjects:
   - {fileID: 2040574911}

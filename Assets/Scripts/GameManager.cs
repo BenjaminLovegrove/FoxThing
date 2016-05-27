@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     public float camLerp = 1;
     public float camLerpTime;
     private Vector3 lerpStartPos;
-    private int foxCount;
+    public int foxCount;
     private bool lerpStarted;
     private Transform endCamPos;
     private GameObject bunnyProp;

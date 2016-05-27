@@ -28,7 +28,7 @@ public class UIIcon : MonoBehaviour {
         }
 
         //No marker before game starts or when moving camera
-        if (GM.gameTimer <= 0 || GM.camLerp < 1)
+        if (GM.gameTimer <= 0 || GM.camLerp < 1 || GM.foxCount < 0)
         {
             bunnyImg.enabled = false;
         } else
