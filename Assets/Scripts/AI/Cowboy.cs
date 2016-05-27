@@ -13,32 +13,47 @@ public class Cowboy : MonoBehaviour {
     private float startRadius;
     public AudioSource bellToll;
 
+    //Lighting
+    private DayNightCycle DNC;
+    private Light myLight;
+    private float maxIntensity;
 
     void Awake () {
+        myLight = gameObject.GetComponentInChildren<Light>();
+        maxIntensity = myLight.intensity;
+        DNC = GameObject.Find("DayNightCycle").GetComponent<DayNightCycle>();
         triggered = false;
         cowboySFX = gameObject.GetComponent<AudioSource>();
         startVol = cowboySFX.volume;
         myCollider = gameObject.GetComponent<SphereCollider>();
         startRadius = myCollider.radius;
+        cowboySFX.time = Random.Range(1, 30);
     }
 	
     void Update()
     {
-        /*
+        //stop chatting when spotting
         if (triggered)
         {
-            cowboySFX.volume = Mathf.Lerp(cowboySFX.volume, 0, Time.deltaTime * 2);
-        } else
-        {
-            cowboySFX.volume = Mathf.Lerp(cowboySFX.volume, startVol, Time.deltaTime * 2);
-        }*/
+            cowboySFX.volume = Mathf.Lerp(cowboySFX.volume, 0, Time.deltaTime * 1);
+        }
 
+        //Sneaking
         if (Input.GetButton("Fire3"))
         {
             myCollider.radius = startRadius * 0.7f;
         } else
         {
             myCollider.radius = startRadius;
+        }
+
+        //Lighting
+        if (DNC.timeOfDay < 0.5f)
+        {
+            myLight.intensity = Mathf.Lerp(maxIntensity, 0, DNC.timeOfDay * 2);
+        } else
+        {
+            myLight.intensity = Mathf.Lerp(0, maxIntensity, (DNC.timeOfDay * 2) - 1);
         }
     }
 
@@ -67,7 +82,7 @@ public class Cowboy : MonoBehaviour {
         Vector3 dir = (pos - transform.position).normalized;
         transform.rotation = Quaternion.LookRotation(dir);
         cowboySFX.volume = cowboySFX.volume * 1.5f;
-        AudioSource.PlayClipAtPoint(alertedSFX, transform.position, 0.7f);
+        AudioSource.PlayClipAtPoint(alertedSFX, transform.position, 0.8f);
         if (fox.gameObject.name == "Collider")
         {
             fox.SendMessageUpwards("Killed", transform.position);

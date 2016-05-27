@@ -53,6 +53,17 @@ public class GameManager : MonoBehaviour {
             Cursor.lockState = CursorLockMode.None;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameStarted)
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            } else
+            {
+                QuitGame();
+            }
+        }
+
         if (camLerp < 1)
         {
             LerpCamera();
@@ -97,7 +108,7 @@ public class GameManager : MonoBehaviour {
                 fadeToBlack.FadeOut(camLerpTime * 2.5f);
                 faded = true;
             }
-            camLerp += Time.deltaTime / (camLerpTime * 2.85f);
+            camLerp += Time.deltaTime / (camLerpTime * 3f);
             camLookAt.transform.position = Vector3.Lerp(lerpStartPos, endCamPos.transform.position, camLerp);
         }
     }
