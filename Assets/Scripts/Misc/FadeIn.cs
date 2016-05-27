@@ -5,6 +5,7 @@ using System.Collections;
 public class FadeIn : MonoBehaviour {
 
     private AudioSource BGM;
+    private float BGMStartVol;
     private Image thisImg;
     private float loadTimer;
     private float loadDelay;
@@ -34,7 +35,7 @@ public class FadeIn : MonoBehaviour {
                 Application.LoadLevel(Application.loadedLevel);
             }
 
-            if (loadTimer > loadDelay - 15 && !credits)
+            if (loadTimer > loadDelay - 17.5f && !credits)
             {
                 credits = true;
                 title.CrossFadeAlpha(1, 2f, false);
@@ -50,9 +51,12 @@ public class FadeIn : MonoBehaviour {
             if (loadTimer > loadDelay - 8)
             {
                 BGM.volume = Mathf.Lerp(BGM.volume, 0, Time.deltaTime / 3);
+            } else if (loadTimer > 0.1f)
+            {
+                BGM.volume = Mathf.Lerp(BGM.volume, BGMStartVol * 2f, Time.deltaTime / 2);
             }
 
-            if (thisImg.color.a == 0)
+                if (thisImg.color.a == 0)
             {
                 this.gameObject.SetActive(false);
             }
@@ -61,6 +65,7 @@ public class FadeIn : MonoBehaviour {
 
 	void Start () {
         BGM = Camera.main.GetComponent<AudioSource>();
+        BGMStartVol = BGM.volume;
         title.CrossFadeAlpha(0, 0f, false);
         myName.CrossFadeAlpha(0, 0f, false);
         img1.CrossFadeAlpha(0, 0f, false);

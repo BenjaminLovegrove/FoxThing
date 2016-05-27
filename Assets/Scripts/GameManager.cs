@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour {
                 fadeToBlack.FadeOut(camLerpTime * 2.5f);
                 faded = true;
             }
-            camLerp += Time.deltaTime / (camLerpTime * 3f);
+            camLerp += Time.deltaTime / (camLerpTime * 2f);
             camLookAt.transform.position = Vector3.Lerp(lerpStartPos, endCamPos.transform.position, camLerp);
         }
     }

@@ -7,7 +7,7 @@ public class CatchFox : MonoBehaviour {
     public MeshCollider[] toDisable;
 
 	void OnTriggerEnter (Collider col) {
-        Invoke("Caught", 1.5f);
+        Invoke("Caught", 0.75f);
         foreach (MeshCollider fenceCol in toDisable)
         {
             fenceCol.enabled = false;

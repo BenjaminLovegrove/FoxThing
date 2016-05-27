@@ -82,7 +82,7 @@ public class Cowboy : MonoBehaviour {
         Vector3 dir = (pos - transform.position).normalized;
         transform.rotation = Quaternion.LookRotation(dir);
         cowboySFX.volume = cowboySFX.volume * 1.5f;
-        AudioSource.PlayClipAtPoint(alertedSFX, transform.position, 0.8f);
+        AudioSource.PlayClipAtPoint(alertedSFX, transform.position);
         if (fox.gameObject.name == "Collider")
         {
             fox.SendMessageUpwards("Killed", transform.position);
